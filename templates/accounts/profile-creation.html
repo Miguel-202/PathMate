@@ -42,15 +42,7 @@
                                                     </div>
                                                 </div>
 
-                                                <!--Last Name Not Used on Data Base-->
-                                                <div class="col-md-12">
-                                                    <div class="form-group">
-                                                    <label >Last Name</label>
-                                                    <div class="form-group">
-                                                        <input type="text" style="border: none; background-color:lightgrey;" name="lastname">
-                                                    </div>
-                                                    </div>
-                                                </div>
+
 
                                                  <!--Age-->
                                                  <div class="col-md-12">
@@ -150,7 +142,7 @@
                                                     <div class="form-group">
                                                     <label >Skill Set </label>
                                                     <div class="form-group">
-                                                        <input type="text" placeholder="Related to the Goal" style="border: none; background-color:lightgrey;" name="Goal_Deadline">
+                                                        <input type="text" placeholder="Related to the Goal" style="border: none; background-color:lightgrey;" name="Skill_Set">
                                                     </div>
                                                     </div>
                                                 </div>
@@ -158,15 +150,12 @@
           
                                                 
                                                  <!--Need Visa SponsosrShip-->
-                                                 <div class="col-md-12 my-4">
+                                                 <div class="col-md-12">
                                                     <div class="form-group">
-                                                        <div class="w-100">
-                                                            <label class="checkbox-wrap checkbox-primary">
-                                                                Are you a international student currently on a F1 ?
-                                                                <input type="checkbox" checked />
-                                                                <span class="checkmark"></span>
-                                                            </label>
-                                                        </div> 
+                                                    <label >Student Under F-1 Visa</label>
+                                                    <div class="form-group">
+                                                        <input type="text" placeholder="Related to the Goal" style="border: none; background-color:lightgrey;" name="Needs_Visa_Sponsorship">
+                                                    </div>
                                                     </div>
                                                 </div>
 
@@ -180,10 +169,10 @@
                                             </div>
 
 
+                                            <div class="w-100">
+                                                <p class="mt-4">I'm already a member! <a href="{% url 'accounts:signin' %}">Sign In</a></p>
+                                            </div>
                                         </form>
-                                        <div class="w-100">
-                                            <p class="mt-4">I'm already a member! <a href="{% url 'accounts:signin' %}">Sign In</a></p>
-                                        </div>
                                     </div>
                                 </div>
                             </div>

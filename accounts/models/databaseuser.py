@@ -10,7 +10,7 @@ class UserProfileTable(models.Model):
 
     User_Country=models.CharField(max_length=300)
 
-    Job = models.CharField(max_length=300)
+    Job = models.CharField(max_length=300,default=" ")
 
     User_Age = models.CharField(max_length=100)
 
@@ -25,11 +25,11 @@ class UserProfileTable(models.Model):
 
     Goals = models.CharField(max_length=300)
 
-    Goal_DeathLine = models.DateField()
+    Goal_Deadline = models.DateField()
 
-    Skill_set = models.CharField(max_length=300)
+    Skill_Set = models.CharField(max_length=300)
 
-    Needs_Visa_Sponsorship = models.BooleanField()
+    Needs_Visa_Sponsorship = models.CharField(max_length=300)
 
 
 
