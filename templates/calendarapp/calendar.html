@@ -22,7 +22,7 @@
     <div class="col-md-12">
         <div class="tile row">
             <div class="col-md-3">
-                <div id="external-events">
+                <div id="external-events" style="max-height: 700px; overflow-y: auto;">
                     <h4 class="mb-4">Running Events</h4>
                     {% for event in events_month %}
                       <div class="fc-event" id="event-{{ event.id }}">

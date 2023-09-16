@@ -26,5 +26,7 @@ urlpatterns = [
         name="running_events",
     ),
     path('trigger_auto_events/', views.trigger_auto_events, name='trigger_auto_events'),
-    path('delete_event/<int:event_id>', views.trigger_delete_event, name='delete_event'	),
+    
+    path('delete_event/<int:event_id>/', views.trigger_delete_event, name='delete_event'),
+
 ]

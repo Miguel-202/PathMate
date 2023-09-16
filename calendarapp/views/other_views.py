@@ -147,14 +147,23 @@ class CalendarViewNew(LoginRequiredMixin, generic.View):
 
 #AI Event Creation
 from ..AI_EventFactory import *
+from django.http import JsonResponse
+from django.shortcuts import redirect
+from calendarapp.models import Event
+
 def trigger_auto_events(request):
     if request.user.is_authenticated:
         create_auto_events(request.user)
         
     return redirect("calendarapp:calendar")
 
-def trigger_delete_event(request):
+def trigger_delete_event(request, event_id):
     if request.user.is_authenticated:
-        delete_event(request.user)
-        
-    return redirect("calendarapp:calendar")
+        try:
+            event = Event.objects.get(id=event_id)
+            delete_event(event)
+            return JsonResponse({'success': True})
+        except Event.DoesNotExist:
+            return JsonResponse({'success': False})
+    else:
+        return JsonResponse({'success': False})
