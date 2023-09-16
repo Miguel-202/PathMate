@@ -25,7 +25,7 @@
                 <div id="external-events" style="max-height: 700px; overflow-y: auto;">
                     <h4 class="mb-4">Running Events</h4>
                     {% for event in events_month %}
-                      <div class="fc-event" id="event-{{ event.id }}">
+                      <div class="fc-event" id="event-{{ event.id }}" data-special-code="{{ event.special_event_code }}">
                           <h3>{{ event.title }}</h3>
                           <p>From: {{ event.start_time }}</p>
                           <p>To: {{ event.end_time }}</p>
@@ -161,7 +161,33 @@
 
         {% for event in events_month%}
           document.getElementById('event-{{ event.id }}').addEventListener('click', function() {
-              alert("Event {{ event.description }}");
+              var specialCode = {{ event.special_event_code }};
+              switch (specialCode) {
+                case 0:
+                    // Your logic for specialCode general tasks
+                    alert('Special Code is 0');
+                    break;
+                case 1:
+                    // Your logic for specialCode OPT
+                    alert('Special Code is 1');
+                    break;
+                case 2:
+                    // Your logic for specialCode Job Interview
+                    alert('Special Code is 2');
+                    break;
+                case 3:
+                    // Your logic for specialCode Networking
+                    alert('Special Code is 3');
+                    break;
+                case 4:
+                    // Your logic for specialCode Job Finding
+                    alert('Special Code is 4');
+                    break;
+                default:
+                    // Your logic for an undefined or different specialCode
+                    alert('Special Code is undefined or not in the range of 0-3');
+                    break;
+            }
           });
         {% endfor %}
       });
