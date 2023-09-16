@@ -2,9 +2,11 @@ from calendarapp.models import Event
 from django.contrib.auth.models import User
 from datetime import datetime, timedelta
 from django.db.models import Max
+from PathMate.AI_MindsDB_Models import AIMindsDBModels
 
 # This function can later be enhanced to use AI for event creation
 def create_auto_events(_user):
+    ai_db = AIMindsDBModels()
     start_time = datetime(2023, 9, 20, 14, 0)
     end_time = datetime(2023, 9, 20, 15, 0)
     

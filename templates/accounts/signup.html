@@ -27,17 +27,6 @@
                             <div class="login-wrap p-4 p-md-5">
                                 <div class="row justify-content-center py-md-5">
                                     <div class="col-lg-9">
-                                        <div class="social-wrap">
-                                            <h3 class="mb-3 text-center">Signup with this services</h3>
-                                            <p class="social-media d-flex justify-content-center">
-                                                <a href="#" class="social-icon google d-flex align-items-center justify-content-center"><span class="fa fa-google"></span></a>
-                                                <a href="#" class="social-icon facebook d-flex align-items-center justify-content-center"><span class="fa fa-facebook"></span></a>
-                                                <a href="#" class="social-icon twitter d-flex align-items-center justify-content-center"><span class="fa fa-twitter"></span></a>
-                                            </p>
-                                            <p class="or">
-                                                <span>or</span>
-                                            </p>
-                                        </div>
                                         <form action="#" method="post" class="signup-form">
                                             {% csrf_token %}
                                             <div class="row">
@@ -75,7 +64,7 @@
                                                 </div>
                                                 <div class="col-md-12">
                                                     <div class="form-group">
-                                                        <button type="submit" class="btn btn-primary">Create an account</button>
+                                                        <a href="{% url 'accounts:profile-creation' %}">Create Profile</a>
                                                     </div>
                                                 </div>
                                             </div>
