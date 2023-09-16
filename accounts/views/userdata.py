@@ -1,6 +1,5 @@
 from django.shortcuts import render,redirect
 from ..models.databaseuser import UserProfileTable
-from django.http import HttpResponseRedirect
 
 
 def userdata(request):
@@ -32,7 +31,7 @@ def userdata(request):
                                           Skill_Set=skill_set,
                                           Needs_Visa_Sponsorship=needs_visa_sponsorship
                                           )
-          return HttpResponseRedirect("accounts/signup.html")
+          return redirect("/accounts/signup")
         return render(request, "accounts/profile-creation.html")
 
       
