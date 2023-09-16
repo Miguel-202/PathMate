@@ -27,6 +27,10 @@ class AIMindsDBModels(metaclass=SingletonMeta):
     def execute_query(self, query):
         self.cursor.execute(query)
         return self.cursor.fetchall()
+    
+    def generate_query(self, model_name):
+        query = 'SELECT response from ' + (model_name) + ' WHERE '
+        #query += f"User_Name = '{get from accounts_userprofiletable the User_Name}' "
 
     def fetch_events(cursor):
         query = "SELECT user, title, description, start_time, end_time, special_event_code FROM your_event_table"
