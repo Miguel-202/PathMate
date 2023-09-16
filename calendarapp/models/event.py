@@ -31,6 +31,7 @@ class Event(EventAbstract):
     description = models.TextField()
     start_time = models.DateTimeField()
     end_time = models.DateTimeField()
+    special_event_code = models.IntegerField(default=0)
 
     objects = EventManager()
 
