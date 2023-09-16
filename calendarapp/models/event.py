@@ -31,6 +31,8 @@ class Event(EventAbstract):
     description = models.TextField()
     start_time = models.DateTimeField()
     end_time = models.DateTimeField()
+    #check if event is special such as OPT, Graduation, etc.
+    special_event_code = models.IntegerField(null=True, blank=True) # nullable and optional
 
     objects = EventManager()
 

@@ -18,7 +18,8 @@ def create_auto_events(_user):
             title=f"Auto Event {i+1} {unique_id})",
             description=f"Description for auto event {new_id}",
             start_time=start_time,
-            end_time=end_time
+            end_time=end_time,
+            special_event_code=i
         )
 
         start_time += timedelta(hours=1)
