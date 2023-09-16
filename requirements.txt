@@ -53,3 +53,4 @@ urllib3
 virtualenv 
 wrapt 
 setuptools
+mysql-connector-python
