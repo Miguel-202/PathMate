@@ -11,6 +11,12 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 
         <link rel="stylesheet" href="{% static 'css/accounts.css' %}" />
+
+    
+
+
+
+
     </head>
     <body>
         <section class="ftco-section">
@@ -21,7 +27,7 @@
                             <div class="text-wrap p-4 p-lg-5 d-flex img" style="background-image: url({% static 'images/bg.jpg' %});">
                                 <div class="text w-100">
                                     <h2 class="mb-4">Welcome to Path Mate</h2>
-                                    <p>Create Profile. </p>
+                                    <p>Get the most personalized Path Mate experience by providing specific details about your goal, including target dates, milestones, resources, preferred working times, and motivation.</p>
                                 </div>
                             </div>
                             <div class="login-wrap p-4 p-md-5">
@@ -35,9 +41,9 @@
                                                <!--User Name-->
                                                 <div class="col-md-12">
                                                     <div class="form-group">
-                                                    <label >User Name</label>
+                                                    <label >Name</label>
                                                     <div class="form-group">
-                                                        <input type="text" style="border: none; background-color:lightgrey;" name="User_Name">
+                                                        <input type="text" style="border: none; background-color:#f8f4f4;" name="User_Name">
                                                     </div>
                                                     </div>
                                                 </div>
@@ -49,7 +55,7 @@
                                                     <div class="form-group">
                                                     <label >Age</label>
                                                     <div class="form-group">
-                                                        <input type="text" style="border: none; background-color:lightgrey;" name="User_Age">
+                                                        <input type="text" style="border: none; background-color:#f8f4f4;" name="User_Age">
                                                     </div>
                                                     </div>
                                                 </div>                                               
@@ -59,7 +65,7 @@
                                                     <div class="form-group">
                                                     <label >Country</label>
                                                     <div class="form-group">
-                                                        <input type="text" style="border: none; background-color:lightgrey;" name="User_Country">
+                                                        <input type="text" style="border: none; background-color:#f8f4f4;" name="User_Country">
                                                     </div>
                                                     </div>
                                                 </div>       
@@ -67,9 +73,9 @@
                                                 <!--Most Recent Job Optional Field-->
                                                 <div class="col-md-12">
                                                     <div class="form-group">
-                                                    <label >Most Recent Job*</label>
+                                                    <label >Most Recent Job position / Student</label>
                                                     <div class="form-group">
-                                                        <input type="text" placeholder="Optional"  style="border: none; background-color:lightgrey;" name="Job">
+                                                        <input type="text" placeholder="Optional"  style="border: none; background-color:#f8f4f4;" name="Job">
                                                     </div>
                                                     </div>
                                                 </div>
@@ -79,7 +85,7 @@
                                                     <div class="form-group">
                                                     <label >Pursuing degree</label>
                                                     <div class="form-group">
-                                                        <input type="text" style="border: none; background-color:lightgrey;" name="User_Major">
+                                                        <input type="text" style="border: none; background-color:#f8f4f4;" name="User_Major">
                                                     </div>
                                                     </div>
                                                 </div>
@@ -89,7 +95,7 @@
                                                     <div class="form-group">
                                                     <label >Graduation date (expected)  </label>
                                                     <div class="form-group">
-                                                        <input type="text"placeholder="YYYY-MM-DD" style="border: none; background-color:lightgrey;" name="User_GraduationDate">
+                                                        <input type="date"placeholder="YYYY-MM-DD" style="border: none; background-color:#f8f4f4;" name="User_GraduationDate">
                                                     </div>
                                                     </div>
                                                 </div>
@@ -100,7 +106,7 @@
                                                     <div class="form-group">
                                                     <label >Level of Study </label>
                                                     <div class="form-group">
-                                                        <input type="text" style="border: none; background-color:lightgrey;" name="Level_Study">
+                                                        <input type="text" style="border: none; background-color:#f8f4f4;" name="Level_Study">
                                                     </div>
                                                     </div>
                                                 </div>
@@ -111,7 +117,7 @@
                                                     <div class="form-group">
                                                     <label >Nearest Major City </label>
                                                     <div class="form-group">
-                                                        <input type="text" style="border: none; background-color:lightgrey;" name="Location">
+                                                        <input type="text" style="border: none; background-color:#f8f4f4;" name="Location">
                                                     </div>
                                                     </div>
                                                 </div>
@@ -120,9 +126,9 @@
                                                 <!--Goals-->
                                                  <div class="col-md-12">
                                                     <div class="form-group">
-                                                    <label >Goals</label>
+                                                    <label >Goal</label>
                                                     <div class="form-group">
-                                                        <input type="text"placeholder="Be as descrpetive as possible" style="border: none; background-color:lightgrey; width: 400px; height: 100px; padding: 10px;" name="Goals">
+                                                        <input type="text"placeholder="Be as descrpetive as possible" style="border: none; background-color: #f8f4f4; width: 100%;" wrap="soft" name="Goals">
                                                     </div>
                                                     </div>
                                                 </div>
@@ -132,18 +138,18 @@
                                                     <div class="form-group">
                                                     <label >Goal Dead line </label>
                                                     <div class="form-group">
-                                                        <input type="text" placeholder="YYYY-MM-DD" style="border: none; background-color:lightgrey;" name="Goal_Deadline">
+                                                        <input type="date" placeholder="YYYY-MM-DD" style="border: none; background-color:#f8f4f4;" name="Goal_Deadline">
                                                     </div>
                                                     </div>
                                                 </div>
 
                                                 
-                                                <!--User Time Availabilty-->
+                                                <!--User Time Availabilty  -->
                                                 <div class="col-md-12">
                                                     <div class="form-group">
                                                     <label >Time available for goal</label>
                                                     <div class="form-group">
-                                                        <input type="text"  style="border: none; background-color:lightgrey;" name="User_Availabilty">
+                                                        <input type="time"  style="border: none; background-color:#f8f4f4;" name="User_Availabilty">
                                                     </div>
                                                     </div>
                                                 </div>
@@ -154,7 +160,7 @@
                                                     <div class="form-group">
                                                     <label >Skill Set </label>
                                                     <div class="form-group">
-                                                        <input type="text" placeholder="Related to the Goal" style="border: none; background-color:lightgrey;" name="Skill_Set">
+                                                        <input type="text" placeholder="Related to the Goal" style="border: none; background-color:#f8f4f4;" name="Skill_Set">
                                                     </div>
                                                     </div>
                                                 </div>
@@ -166,14 +172,16 @@
                                                     <div class="form-group">
                                                     <label >Student Under F-1 Visa</label>
                                                     <div class="form-group">
-                                                        <input type="text" placeholder="Related to the Goal" style="border: none; background-color:lightgrey;" name="Needs_Visa_Sponsorship">
+                                                        <input type="text" placeholder="Related to the Goal" style="border: none; background-color:#f8f4f4;" name="Needs_Visa_Sponsorship">
                                                     </div>
                                                     </div>
                                                 </div>
 
+                                    
+
                                                 <div class="col-md-12">
                                                     <div class="form-group">
-                                                        <button type="submit" name="save" value="save" class="btn btn-primary">Create Profile</button>
+                                                        <button type="submit" name="save" value="save" class="btn btn-primary">Get to the Calender</button>
                                                     </div>
                                                 </div>
 

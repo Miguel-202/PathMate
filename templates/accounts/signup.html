@@ -20,8 +20,8 @@
                         <div class="wrap d-md-flex">
                             <div class="text-wrap p-4 p-lg-5 d-flex img" style="background-image: url({% static 'images/bg.jpg' %});">
                                 <div class="text w-100">
-                                    <h2 class="mb-4">Welcome to Event Calendar</h2>
-                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                                    <h2 class="mb-4">Welcome to Path Mate</h2>
+                                    <p>Unlock your path to success with Path Mate, the AI-powered web app that turns your goals into personalized action plans displayed beautifully on your calendar</p>
                                 </div>
                             </div>
                             <div class="login-wrap p-4 p-md-5">
@@ -30,6 +30,7 @@
                                         <form action="#" method="post" class="signup-form">
                                             {% csrf_token %}
                                             <div class="row">
+
                                                 <div class="col-md-12">
                                                     <div class="form-group">
                                                         <label class="label" for="email">Email Address</label>
@@ -37,6 +38,8 @@
                                                         <span class="text-danger">{{ form.errors.email }}</span>
                                                     </div>
                                                 </div>
+
+
                                                 <div class="col-md-12">
                                                     <div class="form-group">
                                                         <label class="label" for="password">Password</label>
@@ -64,7 +67,7 @@
                                                 </div>
                                                 <div class="col-md-12">
                                                     <div class="form-group">
-                                                        <a href="{% url 'accounts:profile-creation' %}">Create Profile</a>
+                                                       <button type="submit" class="btn btn-primary" id="create-profile-btn">Create Profile</button>
                                                     </div>
                                                 </div>
                                             </div>

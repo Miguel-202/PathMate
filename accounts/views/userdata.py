@@ -33,7 +33,7 @@ def userdata(request):
                                           Needs_Visa_Sponsorship=needs_visa_sponsorship,
                                           User_Availabilty=user_availabilty
                                           )
-          return redirect("/accounts/signup")
+          return redirect("calendarapp:calendar")
         return render(request, "accounts/profile-creation.html")
 
       
