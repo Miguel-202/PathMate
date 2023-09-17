@@ -192,7 +192,7 @@
             modalDescription.textContent = eventDescription
 
             // Check for optional button to display
-            if (specialCode == 0) {
+            if (specialCode === 0 && optionalButtonContainer.childElementCount === 0) {
                 const optionalButton = document.createElement('button');
                 optionalButton.textContent = 'Special Button';
                 
