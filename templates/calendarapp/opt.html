@@ -1,0 +1,99 @@
+    <!-- The overlay and popup content -->
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}Event Calendar{% endblock title %}
+
+{% block extracss %}
+<link href="{% static 'calender/opt.css' %}" rel="stylesheet" />
+{% endblock extracss %}
+
+
+{% block content %}
+<body>
+    <button id="showPopupButton">Show Popup</button>
+
+    <!-- The overlay and popup content -->
+    <div class="overlay" id="popupOverlay"></div>
+    <div class="popup" id="popup">
+
+        <div class="form-container">
+            <h1>USCIS Form I-765</h1>
+            <p>Click the link below to fill & download USCIS Form I-765:</p>
+            <a id="aa" href="https://www.uscis.gov/sites/default/files/document/forms/i-765.pdf" target="_blank">Download Form
+                I-765</a>
+        </div>
+        <br class="break">
+
+        <div class="countdown-container">
+            <h1 id="countdown">Graduation Timer</h1>
+            <form id="date-form">
+                <label for="calendar-date">Select a graduation date:</label>
+                <input type="date" id="calendar-date" required>
+                <button class="btn" type="submit">Calculate</button>
+            </form>
+            <div id="countdown-result"></div>
+        </div>
+        <br class="break">
+
+        <div>
+            <h1>Verify Information on Form I-765</h1>
+            <p>Click the link below to View OPT Timeline your area</p>
+            <a id="aa" href="https://opttimeline.com/IOE?CASE_TY=EAD" target="_blank">View OPT Timeline</a>
+        </div>
+        <br class="break">
+
+        <button id="closePopupButton">Close</button>
+    </div>
+</body>
+{% endblock content %}
+
+
+
+{% block extrascripts %}
+    <script>
+ // Get references to the button, overlay, and popup
+ const showPopupButton = document.getElementById('showPopupButton');
+ const closePopupButton = document.getElementById('closePopupButton');
+ const popupOverlay = document.getElementById('popupOverlay');
+ const popup = document.getElementById('popup');
+
+ // Add a click event listener to show the popup
+ showPopupButton.addEventListener('click', () => {
+     popup.style.display = 'block';
+     popupOverlay.style.display = 'block';
+ });
+
+ // Add a click event listener to close the popup
+ closePopupButton.addEventListener('click', () => {
+     popup.style.display = 'none';
+     popupOverlay.style.display = 'none';
+     window.location.href = '/'
+ });
+
+
+ // Graduation Timer 
+ document.addEventListener('DOMContentLoaded', function () {
+     const dateForm = document.getElementById('date-form');
+     const countdownResult = document.getElementById('countdown-result');
+
+     dateForm.addEventListener('submit', function (e) {
+         e.preventDefault();
+
+         const calendarDate = new Date(document.getElementById('calendar-date').value);
+         const currentDate = new Date();
+         const delta = Math.floor((calendarDate - currentDate) / (1000 * 60 * 60 * 24));
+
+         if (delta > 90) {
+             countdownResult.textContent = `Wait: ${delta - 90} days remaining`;
+         } else if (delta < 0) {
+             // If delta is negative, start a new 60-day countdown from the current date
+             const deltaAfter = Math.abs(-delta - 60);
+             countdownResult.textContent = `You Graduated: ${deltaAfter} days left to apply`;
+         } else {
+             countdownResult.textContent = `Apply: ${delta} days left till graduation`;
+         }
+     });
+ });
+    </script>
+{% endblock extrascripts %}
+

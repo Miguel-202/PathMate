@@ -153,8 +153,8 @@ from calendarapp.models import Event
 
 def trigger_auto_events(request):
     if request.user.is_authenticated:
-        create_auto_events(request.user)
-        
+        user_id = request.user.id
+        create_auto_events(user_id)
     return redirect("calendarapp:calendar")
 
 def trigger_delete_event(request, event_id):
@@ -167,3 +167,6 @@ def trigger_delete_event(request, event_id):
             return JsonResponse({'success': False})
     else:
         return JsonResponse({'success': False})
+    
+def opt(request):
+    return render(request, "calendarapp/opt.html")

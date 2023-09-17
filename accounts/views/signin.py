@@ -24,6 +24,6 @@ class SignInView(View):
             user = authenticate(email=email, password=password)
             if user:
                 login(request, user)
-                return redirect("calendarapp:calendar")
+                return redirect("accounts:profile-creation")
         context = {"form": forms}
         return render(request, self.template_name, context)
