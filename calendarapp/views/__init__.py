@@ -10,6 +10,7 @@ from .other_views import (
     trigger_auto_events,
     trigger_delete_event,
     get_event_details,
+    opt,
 )
 
 
@@ -26,4 +27,5 @@ __all__ = [
     trigger_auto_events,
     trigger_delete_event,
     get_event_details,
+    opt,
 ]

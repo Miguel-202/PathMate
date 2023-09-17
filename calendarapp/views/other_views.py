@@ -179,3 +179,6 @@ def get_event_details(request, event_id):
         return JsonResponse(data)
     except Event.DoesNotExist:
         return JsonResponse({'error': 'Event not found'}, status=404)
+    
+def opt(request):
+    return render(request, "calendarapp/opt.html")

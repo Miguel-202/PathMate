@@ -29,5 +29,6 @@ urlpatterns = [
     
     path('delete_event/<int:event_id>/', views.trigger_delete_event, name='delete_event'),
     path('get_event_details/<int:event_id>/', views.get_event_details, name='get_event_details'),
+    path("opt/", views.opt)
 
 ]
