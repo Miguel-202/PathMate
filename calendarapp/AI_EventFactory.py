@@ -1,30 +1,63 @@
 from calendarapp.models import Event
-from django.contrib.auth.models import User
+from accounts.models import User
+
 from datetime import datetime, timedelta
+from django.utils.dateparse import parse_datetime
 from django.db.models import Max
 from PathMate.AI_MindsDB_Models import AIMindsDBModels
 
+import re
+from dateutil.parser import parse
+#Q: What is the pip install for dateutil.parser? A: pip install python-dateutil
+
 # This function can later be enhanced to use AI for event creation
-def create_auto_events(_user):
+def create_auto_events(_user_id):
     ai_db = AIMindsDBModels()
-    start_time = datetime(2023, 9, 20, 14, 0)
-    end_time = datetime(2023, 9, 20, 15, 0)
-    
     last_event = Event.objects.all().aggregate(Max('id'))
     last_id = last_event['id__max'] or 0
-    for i in range(2):
-        new_id = last_id + i + 1
-        unique_id = datetime.now().strftime("%Y%m%d%H%M%S%f")
-        Event.objects.create(
-            user=_user,
-            title=f"Auto Event {i+1} {unique_id})",
-            description=f"Description for auto event {new_id}",
-            start_time=start_time,
-            end_time=end_time
-        )
+    
+    profile = ai_db.fetch_user_profile(_user_id)
+    if profile is None:
+        with open("logs.txt", "a") as f:
+            f.write("USER NOT FOUND: ")
+            f.write("\n\n")
+        return
+    
+    query = ai_db.generate_query("mindsdb.roadmap_calendar_planner_model", profile)
+    
+    event_string = ai_db.execute_query(query)
+    
+    pattern  = re.compile(r'title = "(?P<title>.*?)"[,]?\n'
+                      r'description = "(?P<description>.*?)"[,]?\n'
+                      r'start_time = "(?P<start_time>.*?)"[,]?\n'
+                      r'end_time = "(?P<end_time>.*?)"[,]?\n'
+                      r'special_event_code = (?P<special_event_code>\d+)')
 
-        start_time += timedelta(hours=1)
-        end_time += timedelta(hours=1)
+    
+    matches = pattern.findall(event_string)
+    with open("logs.txt", "a") as f:
+            #log matches.size
+            f.write("Matches found: " + str(len(matches)))
+            f.write("\n\n")
+    
+    for match in matches:
+        title, description, start_time, end_time, special_event_code = match
+        start_time = parse(start_time)  # Convert to datetime object
+        end_time = parse(end_time)  # Convert to datetime object
+        special_event_code = int(special_event_code)  # Convert to integer
+
+        # Create event
+        Event.objects.create(
+            user=User.objects.get(id=_user_id),
+            title=title,
+            description=description,
+            start_time=start_time,
+            end_time=end_time,
+            special_event_code=special_event_code
+        )
+        
+    
+    
 
 
 def delete_event(_event):
