@@ -24,15 +24,15 @@
             <div class="col-md-3">
                 <div id="external-events" style="max-height: 700px; overflow-y: auto;">
                     <h4 class="mb-4">Running Events</h4>
-                    {% for event in events_month %}
-                      <div class="fc-event" onclick="loadEvents({{ event.id }})" id="event-{{ event.id }}" data-special-code="{{ event.special_event_code }}" title="{{ event.title }}" description="{{ event.description }}">
-                          <h3>{{ event.title }}</h3>
-                          <p>From: {{ event.start_time }}</p>
-                          <p>To: {{ event.end_time }}</p>
-                      </div>
-                    {% empty %}
-                      <p>No Running Events Found</p>
-                    {% endfor %}
+                        {% for event in events_month %}
+                        <div class="fc-event" id="event-{{ event.id }}" data-special-code="{{ event.special_event_code }}" title="{{ event.title }}" description="{{ event.description }}">
+                            <h3>{{ event.title }}</h3>
+                            <p>From: {{ event.start_time }}</p>
+                            <p>To: {{ event.end_time }}</p>
+                        </div>
+                        {% empty %}
+                        <p>No Running Events Found</p>
+                        {% endfor %}
                 </div>
             </div>
             <div class="col-md-9">
@@ -183,17 +183,24 @@
 
         calendar.render();
 
-        function loadEvents(eventId) {
-            document.getElementById('event-' + eventId)
+        function loadEvent(eventTitle, eventDescription) {
             var modal = document.getElementById('loadModal')
+            var modalTitle = document.getElementById('modalTitle');
+            modalTitle.textContent = eventTitle
+
+            var modalDescription = document.getElementById('modalDescription');
+            modalDescription.textContent = eventDescription
+            
             modal.style.display = 'block'
             calendar.unselect()
           }
         
         {% for event in events_month%}
           document.getElementById('event-{{ event.id }}').addEventListener('click', function() {
-            loadEvents(event);
+              var eventTitle = "{{event.title}}";
+              var eventDescription = "{{event.description}}";
               var specialCode = {{ event.special_event_code }};
+              loadEvent(eventTitle, eventDescription);
               switch (specialCode) {
                 case 0:
                     // Your logic for specialCode general tasks
@@ -222,7 +229,6 @@
       const closeBtn2 = document.getElementById('modalClose2');
 
       const closeBtn3 = document.getElementById('loadModalClose1');
-      const closeBtn4 = document.getElementById('loadModalClose2');
       closeBtn1.addEventListener('click',()=>{
         const eventModal = document.getElementById('eventModal')
         eventModal.style.display = 'none';
@@ -232,10 +238,6 @@
         eventModal.style.display = 'none';
       });
       closeBtn3.addEventListener('click',()=>{
-        const loadModal = document.getElementById('loadModal')
-        loadModal.style.display = 'none';
-      });
-      closeBtn4.addEventListener('click',()=>{
         const loadModal = document.getElementById('loadModal')
         loadModal.style.display = 'none';
       });
