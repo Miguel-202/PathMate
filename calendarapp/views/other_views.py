@@ -167,3 +167,6 @@ def trigger_delete_event(request, event_id):
             return JsonResponse({'success': False})
     else:
         return JsonResponse({'success': False})
+    
+def opt(request):
+    return render(request, "calendarapp/opt.html")
