@@ -14,14 +14,12 @@
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
         <link href="https://fonts.googleapis.com/css2?family=Anybody&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="{% static 'css/frontpage.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/frontpage3.css' %}" />
     </head>
     <body>
 
         <section>
             <ul>
-                <li><a href="{% url 'accounts:signin' %}">Sign In</a></li>
-                <li><a href="{% url 'accounts:signup' %}">Sign Up</a></li>
           
               </ul>
               <div class="hero">
@@ -30,15 +28,52 @@
                 </video>
                   <div class="content">
                   <h1>Path Mate</h1>
-                  <a href="#" class="hero-btn"></a>
+                  <a href="{% url 'accounts:signin' %}" class="hero-btn">Sign In</a>
+                  <a href="{% url 'accounts:signup' %}" class="hero-btn">Sign Up</a>
                 </div>
               </div>
         </section>
 
         <section class="pilars">
-            <h1>Where your dreams find a date on your calendar</h1>
-            <p>Your AI-driven personal goal planner, turning aspirations into actionable steps.</p>
+            <h1>AI-driven calender generetor</h1>
+            <p>Your AI-driven personal goal planner,turning aspirations into actionable steps.</p>
         </section>
+        
+        <div class="image-container-ChatRespond">
+            <img src="{% static 'images/What.jpeg' %}" alt="prompt">
+            <img src="{% static 'images/LearnPython.jpeg' %}" alt="CHATGPTrespond">
+        </div>
+
+        <section style="background-color: whitesmoke;"  class="pilars">
+            <h2 ><br><br>  "Path Mate guides you to your dream internship or job by mapping out a strategic career path on your calendar <br><br><br><br></h2>
+        </section>
+      
+        <div class="image-container-ChatRespond">
+            <img src="{% static 'images/CareerPath.jpeg' %}" alt="prompt">
+            <img src="{% static 'images/CarePathMate.jpeg' %}" alt="CHATGPTrespond">
+        </div>
+
+        <section   class="pilars">
+            <h1>Built With</h1>
+            <p>Path Mate was meticulously crafted using cutting-edge technologies, including Python, Django, and MindsDB, ensuring a robust and intelligent platform</p>
+        </section>
+
+        <div class="image-container-ChatRespond2">
+            <img src="{% static 'images/Python-logo-notext.svg.png' %}" alt="prompt">
+            <img src="{% static 'images/django-logo-positive.png' %}" alt="CHATGPTrespond">
+            <img src="{% static 'images/Mindsdb.png' %}" alt="CHATGPTrespond">
+        </div>
+
+        <div class="image-container-ChatRespond3">
+            <img src="{% static 'images/Screenshot 2023-09-17 071405.png' %}" alt="prompt">
+        </div>
+
+        <section  style="background-color: whitesmoke;" class="pilars">
+            <h1>Why we Build it ?</h1>
+            <p>International students face added barriers in life after college</p>
+            <img src="{% static 'images/Graph.png' %}" alt="CHATGPTrespond">
+        </section>
+
 
 
         
