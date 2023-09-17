@@ -25,7 +25,7 @@
                 <div id="external-events" style="max-height: 700px; overflow-y: auto;">
                     <h4 class="mb-4">Running Events</h4>
                     {% for event in events_month %}
-                      <div class="fc-event" id="event-{{ event.id }}" data-special-code="{{ event.special_event_code }}">
+                      <div class="fc-event" onclick="loadEvents({{ event.id }})" id="event-{{ event.id }}" data-special-code="{{ event.special_event_code }}" title="{{ event.title }}" description="{{ event.description }}">
                           <h3>{{ event.title }}</h3>
                           <p>From: {{ event.start_time }}</p>
                           <p>To: {{ event.end_time }}</p>
@@ -39,6 +39,30 @@
                 <div id="calendar"></div>
             </div>
 
+            <!-- pop-up for clicking a created event-->
+            <div class="modal fade show" id="loadModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header bg-primary">
+                            <h5 class="modal-title text-white" id="modalTitle"></h5>
+                            <button id="loadModalClose1" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label for="message-text" class="col-form-label" id="modalDescription"></label>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <a href="{% url 'calendarapp:trigger_auto_events' %}" class="btn btn-secondary">Generate Auto Events</a>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- pop-up for creating a calendar event-->
             <div class="modal fade show" id="eventModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
@@ -159,29 +183,32 @@
 
         calendar.render();
 
+        function loadEvents(eventId) {
+            document.getElementById('event-' + eventId)
+            var modal = document.getElementById('loadModal')
+            modal.style.display = 'block'
+            calendar.unselect()
+          }
+        
         {% for event in events_month%}
           document.getElementById('event-{{ event.id }}').addEventListener('click', function() {
+            loadEvents(event);
               var specialCode = {{ event.special_event_code }};
               switch (specialCode) {
                 case 0:
                     // Your logic for specialCode general tasks
-                    alert('Special Code is 0');
                     break;
                 case 1:
                     // Your logic for specialCode OPT
-                    alert('Special Code is 1');
                     break;
                 case 2:
                     // Your logic for specialCode Job Interview
-                    alert('Special Code is 2');
                     break;
                 case 3:
                     // Your logic for specialCode Networking
-                    alert('Special Code is 3');
                     break;
                 case 4:
                     // Your logic for specialCode Job Finding
-                    alert('Special Code is 4');
                     break;
                 default:
                     // Your logic for an undefined or different specialCode
@@ -193,6 +220,9 @@
       });
       const closeBtn1 = document.getElementById('modalClose1');
       const closeBtn2 = document.getElementById('modalClose2');
+
+      const closeBtn3 = document.getElementById('loadModalClose1');
+      const closeBtn4 = document.getElementById('loadModalClose2');
       closeBtn1.addEventListener('click',()=>{
         const eventModal = document.getElementById('eventModal')
         eventModal.style.display = 'none';
@@ -200,6 +230,14 @@
       closeBtn2.addEventListener('click',()=>{
         const eventModal = document.getElementById('eventModal')
         eventModal.style.display = 'none';
+      });
+      closeBtn3.addEventListener('click',()=>{
+        const loadModal = document.getElementById('loadModal')
+        loadModal.style.display = 'none';
+      });
+      closeBtn4.addEventListener('click',()=>{
+        const loadModal = document.getElementById('loadModal')
+        loadModal.style.display = 'none';
       });
   </script>
 {% endblock extrascripts %}
