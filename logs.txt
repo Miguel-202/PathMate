@@ -62,3 +62,73 @@ special_event_code = 5
 
 Matches found: 10
 
+USER NOT FOUND: 
+
+USER NOT FOUND: 
+
+USER NOT FOUND: 
+
+Result String: title = "Python Advanced Course",
+description = "To enhance your Python skills, take an advanced Python course. This will help you in your goal to become a site reliability engineer. You should dedicate at least 2 hours a day to this course. <link to Coursera Python Advanced Course>",
+start_time = "2023-12-16 09:00:00",
+end_time = "2024-01-15 11:00:00",
+special_event_code = 2
+
+\n\ntitle = "React Advanced Course",
+description = "To enhance your React skills, take an advanced React course. This will help you in your goal to become a site reliability engineer. You should dedicate at least 2 hours a day to this course. <link to Coursera React Advanced Course>",
+start_time = "2024-01-16 09:00:00",
+end_time = "2024-02-15 11:00:00",
+special_event_code = 2
+
+\n\ntitle = "Javascript Advanced Course",
+description = "To enhance your Javascript skills, take an advanced Javascript course. This will help you in your goal to become a site reliability engineer. You should dedicate at least 2 hours a day to this course. <link to Coursera Javascript Advanced Course>",
+start_time = "2024-02-16 09:00:00",
+end_time = "2024-03-17 11:00:00",
+special_event_code = 2
+
+\n\ntitle = "AI for Site Reliability Engineering Course",
+description = "Take a course on how AI can be used in site reliability engineering. This will help you understand how to apply your AI knowledge in your desired job role. You should dedicate at least 2 hours a day to this course. <link to Coursera AI for SRE Course>",
+start_time = "2024-03-18 09:00:00",
+end_time = "2024-04-17 11:00:00",
+special_event_code = 2
+
+\n\ntitle = "Job Applications",
+description = "Start applying for site reliability engineer positions. Aim to apply to at least 5 jobs per week. <link to LinkedIn Jobs>",
+start_time = "2024-04-18 09:00:00",
+end_time = "2024-07-17 17:00:00",
+special_event_code = 3
+
+\n\ntitle = "Networking Event",
+description = "Attend a networking event for site reliability engineers. This will help you make connections in your desired field. <link to Meetup Events>",
+start_time = "2024-07-18 18:00:00",
+end_time = "2024-07-18 21:00:00",
+special_event_code = 4
+
+\n\ntitle = "Interview Preparation",
+description = "Start preparing for job interviews. Practice common interview questions and scenarios for site reliability engineer positions. <link to LeetCode Interview Prep>",
+start_time = "2024-07-19 09:00:00",
+end_time = "2024-08-18 11:00:00",
+special_event_code = 2
+
+\n\ntitle = "Mock Interviews",
+description = "Schedule mock interviews to get feedback and improve your interview skills. Aim to do at least one mock interview per week. <link to Pramp Mock Interviews>",
+start_time = "2024-08-19 09:00:00",
+end_time = "2024-09-18 11:00:00",
+special_event_code = 2
+
+\n\ntitle = "Job Offer Negotiation",
+description = "Learn about job offer negotiation strategies. This will help you get the best possible offer when you receive a job offer. <link to Coursera Negotiation Course>",
+start_time = "2024-09-19 09:00:00",
+end_time = "2024-10-19 11:00:00",
+special_event_code = 2
+
+\n\ntitle = "Start New Job",
+description = "Start your new job as a site reliability engineer. Congratulations on achieving your goal!",
+start_time = "2024-10-20 09:00:00",
+end_time = "2024-10-20 17:00:00",
+special_event_code = 0
+
+
+
+Matches found: 10
+

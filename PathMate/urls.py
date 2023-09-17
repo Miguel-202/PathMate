@@ -20,8 +20,8 @@ from .views import DashboardView
 
 
 urlpatterns = [
-    path('', RedirectView.as_view(url='/accounts/frontpage/', permanent=False), name='root'),
     path("", DashboardView.as_view(), name="dashboard"),
+    path('', RedirectView.as_view(url='/accounts/frontpage/', permanent=False), name='root'),
     path("admin/", admin.site.urls),
     path("accounts/", include("accounts.urls")),
     path("", include("calendarapp.urls")),

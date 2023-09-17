@@ -33,7 +33,7 @@ def userdata(request):
                                           Skill_Set=skill_set,
                                           Needs_Visa_Sponsorship=needs_visa_sponsorship,
                                           User_Availabilty=user_availabilty,
-                                          user_id=user_id
+                                          User_id=user_id
                                           )
           return redirect("calendarapp:calendar")
         return render(request, "accounts/profile-creation.html")
