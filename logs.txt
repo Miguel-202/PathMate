@@ -1,0 +1,64 @@
+Result String: title = "Advanced C++ Course",
+description = "To enhance your skills in C++, consider taking an advanced course. This will help you stand out in your internship applications. You can take this course on a weekly basis for 2 months. <link to Coursera C++ course>",
+start_time = "2023-09-17 09:00:00",
+end_time = "2023-11-17 17:00:00",
+special_event_code = 2
+
+title = "Unreal Engine Masterclass",
+description = "To further improve your game development skills, take a masterclass in Unreal Engine. This can be done twice a week for 3 months. <link to Udemy Unreal Engine course>",
+start_time = "2023-09-17 09:00:00",
+end_time = "2023-12-17 17:00:00",
+special_event_code = 2
+
+title = "Game Documentation Workshop",
+description = "Attend a workshop on game documentation to enhance your understanding and skills. This can be a one-time event. <link to Eventbrite Game Documentation Workshop>",
+start_time = "2023-09-17 09:00:00",
+end_time = "2023-09-17 17:00:00",
+special_event_code = 2
+
+title = "NVIDIA Internship Application",
+description = "Start applying for the NVIDIA internship. This should be done weekly for 3 months. <link to NVIDIA Internship Application>",
+start_time = "2023-09-17 09:00:00",
+end_time = "2023-12-17 17:00:00",
+special_event_code = 3
+
+title = "Game Developers Conference",
+description = "Attend the Game Developers Conference for networking opportunities. This is a one-time event. <link to GDC Registration>",
+start_time = "2023-09-17 09:00:00",
+end_time = "2023-09-17 17:00:00",
+special_event_code = 4
+
+title = "Personal Project",
+description = "Start a personal game development project to showcase your skills. This can be done daily for 4 months. <link to GitHub>",
+start_time = "2023-09-17 09:00:00",
+end_time = "2023-01-17 17:00:00",
+special_event_code = 5
+
+title = "LinkedIn Profile Update",
+description = "Update your LinkedIn profile to reflect your new skills and projects. This can be done once a month. <link to LinkedIn>",
+start_time = "2023-09-17 09:00:00",
+end_time = "2023-12-17 17:00:00",
+special_event_code = 5
+
+title = "Portfolio Update",
+description = "Update your portfolio with your new skills and projects. This can be done once a month. <link to Behance>",
+start_time = "2023-09-17 09:00:00",
+end_time = "2023-12-17 17:00:00",
+special_event_code = 5
+
+title = "Mock Interviews",
+description = "Practice your interview skills with mock interviews. This can be done weekly for 2 months. <link to Pramp>",
+start_time = "2023-09-17 09:00:00",
+end_time = "2023-11-17 17:00:00",
+special_event_code = 5
+
+title = "Resume Update",
+description = "Update your resume with your new skills and projects. This can be done once a month. <link to Canva Resume Templates>",
+start_time = "2023-09-17 09:00:00",
+end_time = "2023-12-17 17:00:00",
+special_event_code = 5
+
+
+
+Matches found: 10
+

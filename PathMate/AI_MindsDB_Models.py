@@ -1,6 +1,7 @@
 import mysql.connector
 import os
 from accounts.models import UserProfileTable
+from datetime import datetime
 
 class SingletonMeta(type):
     _instances = {}
@@ -37,16 +38,18 @@ class AIMindsDBModels(metaclass=SingletonMeta):
         except UserProfileTable.DoesNotExist:
             return None 
         
-           
+         
     def generate_query(self, model_name, user_profile):
+        now = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         execute_query = "SELECT response from " + model_name + " WHERE "
         #execute_query += f"User_Name = '{user_profile.User_Name}'  AND "
         #execute_query += f"User_Country = '{user_profile.User_Country}'  AND "
         #execute_query += f"Job = '{user_profile.Job}'  AND "
-        execute_query += f"User_Age = '{user_profile.User_Age}'  AND "
+        #execute_query += f"User_Age = '{user_profile.User_Age}'  AND "
         execute_query += f"User_Major = '{user_profile.User_Major}'  AND "
         execute_query += f"User_GraduationDate = '{user_profile.User_GraduationDate}'  AND "
         execute_query += f"Level_Study = '{user_profile.Level_Study}'  AND "
+        execute_query += f"Start_Date = '{now}' AND " 
         #execute_query += f"Location = '{user_profile.Location}'  AND "
         execute_query += f"Goals = '{user_profile.Goals}'  AND "
         #execute_query += f"Goal_Deadline = '{user_profile.Goal_Deadline}'  AND "
@@ -58,24 +61,20 @@ class AIMindsDBModels(metaclass=SingletonMeta):
         
     def execute_query(self, query):
         self.cursor.execute(query)
-        return self.cursor
+        for row in self.cursor:
+            output = row[0]  # Assuming the text is the first field in the result row
+            sections = output.split("\n\n") #Splitting the text into sections
+
+        result_str = ""
+        for section in sections:
+            result_str += f"{section}\n\n"
+        with open("logs.txt", "a") as f:
+            f.write("Result String: ")
+            f.write(result_str)
+            f.write("\n\n")
+        return result_str
     
 
-    def fetch_events(cursor):
-        query = "SELECT user, title, description, start_time, end_time, special_event_code FROM your_event_table"
-        cursor.execute(query)
-        events = []
-        for row in cursor:
-            event = {
-                "user": row[0],
-                "title": row[1],
-                "description": row[2],
-                "start_time": row[3],
-                "end_time": row[4],
-                "special_event_code": row[5]
-            }
-            events.append(event)
-        return events
     
     
     
