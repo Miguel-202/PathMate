@@ -13781,6 +13781,26 @@ temporary rendered events).
 
 /* Global Event Styles
 --------------------------------------------------------------------------------------------------*/
+
+.special-code-0 {
+  background-color: #E74C3C; /* Red */
+}
+.special-code-1 {
+  background-color: #3498DB; /* Blue */
+}
+.special-code-2 {
+  background-color: #27AE60; /* Green */
+}
+.special-code-3 {
+  background-color: #F1C40F; /* Yellow */
+}
+.special-code-4 {
+  background-color: #9B59B6; /* Purple */
+}
+.special-code-5 {
+  background-color: #E67E22; /* Orange */
+}
+
 .fc-event {
   position: relative;
   /* for resize handle and other inner positioning */
@@ -13791,7 +13811,7 @@ temporary rendered events).
   line-height: 1.3;
   border-radius: 3px;
   border: 1px solid #009688;
-  background-color: #009688;
+  /*background-color: #009688;*/
   font-weight: normal;
   /* undo jqui's ui-widget-header bold */
   margin-bottom: 5px;

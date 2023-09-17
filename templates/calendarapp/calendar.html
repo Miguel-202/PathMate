@@ -25,7 +25,7 @@
                 <div id="external-events" style="max-height: 700px; overflow-y: auto;">
                     <h4 class="mb-4">Running Events</h4>
                         {% for event in events_month %}
-                        <div class="fc-event" id="event-{{ event.id }}" data-special-code="{{ event.special_event_code }}" title="{{ event.title }}" description="{{ event.description }}">
+                        <div class="fc-event special-code-{{event.special_event_code}}" id="event-{{ event.id }}" data-special-code="{{ event.special_event_code }}" title="{{ event.title }}" description="{{ event.description }}">
                             <h3>{{ event.title }}</h3>
                             <p>From: {{ event.start_time }}</p>
                             <p>To: {{ event.end_time }}</p>
@@ -210,16 +210,19 @@
                             break;
                         case 2:
                             // Your logic for specialCode Job Interview
+                            window.open('https://mockmate.com/', '_blank');
                             break;
                         case 3:
                             // Your logic for specialCode Networking
+                            window.open('https://www.wonsulting.ai/networkai', '_blank');
                             break;
                         case 4:
                             // Your logic for specialCode Job Finding
+                            window.open('https://www.google.com/search?q=site%3Ahttps%3A%2F%2Fwww.linkedin.com%2Fjobs%2Fview%2F+software+developer+%22Visa+sponsorship+available%22&rlz=1C1VDKB_enUS1040US1040&oq=site%3Ahttps%3A%2F%2Fwww.linkedin.com%2Fjobs%2Fview%2F+software+developer+%22Visa+sponsorship+available%22&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg60gEIMTAxNmowajGoAgCwAgA&sourceid=chrome&ie=UTF-8', '_blank');
                             break;
                         case 5:
                             // Your logic for specialCode Resume improvement
-                            window.location.href = 'https://resumeworded.com/'
+                            window.open('https://resumeworded.com/', '_blank');
                             break;
                         default:
                             // Your logic for an undefined or different specialCode
