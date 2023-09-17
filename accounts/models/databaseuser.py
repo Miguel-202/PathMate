@@ -32,6 +32,8 @@ class UserProfileTable(models.Model):
     Needs_Visa_Sponsorship = models.CharField(max_length=300)
 
     User_Availabilty = models.CharField(max_length=100)
+    
+    User_id = models.IntegerField(default=0) 
 
 
 
