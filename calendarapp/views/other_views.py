@@ -167,3 +167,15 @@ def trigger_delete_event(request, event_id):
             return JsonResponse({'success': False})
     else:
         return JsonResponse({'success': False})
+    
+def get_event_details(request, event_id):
+    try:
+        event = Event.objects.get(id=event_id)
+        data = {
+            'title': event.title,
+            'description':event.description
+        }
+        print(data)
+        return JsonResponse(data)
+    except Event.DoesNotExist:
+        return JsonResponse({'error': 'Event not found'}, status=404)

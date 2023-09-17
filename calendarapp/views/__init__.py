@@ -9,6 +9,7 @@ from .other_views import (
     EventMemberDeleteView,
     trigger_auto_events,
     trigger_delete_event,
+    get_event_details,
 )
 
 
@@ -23,5 +24,6 @@ __all__ = [
     add_eventmember,
     EventMemberDeleteView,
     trigger_auto_events,
-    trigger_delete_event
+    trigger_delete_event,
+    get_event_details,
 ]
