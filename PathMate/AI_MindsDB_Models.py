@@ -1,5 +1,6 @@
 import mysql.connector
 import os
+from accounts.models import UserProfileTable
 
 class SingletonMeta(type):
     _instances = {}
@@ -10,23 +11,55 @@ class SingletonMeta(type):
             cls._instances[cls] = instance
         return cls._instances[cls]
     
-    
+        '''
+                host=os.environ.get("DB_HOST", "cloud.mindsdb.com"),
+                user=os.environ.get("DB_USER", "your_user"),
+                password=os.environ.get("DB_PASS", "your_password"),
+                port=os.environ.get("DB_PORT", "3306")
+                '''
     
 class AIMindsDBModels(metaclass=SingletonMeta):
     def __init__(self):
         #%env:KEY_NAME=value
         if not hasattr(self, 'mydb'):
             self.mydb = mysql.connector.connect(
-                host=os.environ.get("DB_HOST", "cloud.mindsdb.com"),
-                user=os.environ.get("DB_USER", "your_user"),
-                password=os.environ.get("DB_PASS", "your_password"),
-                port=os.environ.get("DB_PORT", "3306")
+                host="cloud.mindsdb.com",
+                user="pathmateai@gmail.com",
+                password="PathMateAI",
+                port=3306
             )
             self.cursor = self.mydb.cursor() 
-            
+          
+    def fetch_user_profile(self, user_id):
+        try:
+            user_profile = UserProfileTable.objects.get(User_id=user_id)
+            return user_profile
+        except UserProfileTable.DoesNotExist:
+            return None 
+        
+           
+    def generate_query(self, model_name, user_profile):
+        execute_query = "SELECT response from " + model_name + " WHERE "
+        #execute_query += f"User_Name = '{user_profile.User_Name}'  AND "
+        #execute_query += f"User_Country = '{user_profile.User_Country}'  AND "
+        #execute_query += f"Job = '{user_profile.Job}'  AND "
+        execute_query += f"User_Age = '{user_profile.User_Age}'  AND "
+        execute_query += f"User_Major = '{user_profile.User_Major}'  AND "
+        execute_query += f"User_GraduationDate = '{user_profile.User_GraduationDate}'  AND "
+        execute_query += f"Level_Study = '{user_profile.Level_Study}'  AND "
+        #execute_query += f"Location = '{user_profile.Location}'  AND "
+        execute_query += f"Goals = '{user_profile.Goals}'  AND "
+        #execute_query += f"Goal_Deadline = '{user_profile.Goal_Deadline}'  AND "
+        #execute_query += f"Needs_Visa_Sponsorship = '{user_profile.Needs_Visa_Sponsorship}'  AND "
+        execute_query += f"Skill_Set = '{user_profile.Skill_Set}'"
+        #execute_query += f"User_Availabilty = '{user_profile.User_Availabilty}' "
+        return execute_query
+
+        
     def execute_query(self, query):
         self.cursor.execute(query)
-        return self.cursor.fetchall()
+        return self.cursor
+    
 
     def fetch_events(cursor):
         query = "SELECT user, title, description, start_time, end_time, special_event_code FROM your_event_table"

@@ -18,6 +18,7 @@ def userdata(request):
           skill_set = request.POST.get("Skill_Set")
           needs_visa_sponsorship = request.POST.get("Needs_Visa_Sponsorship")
           user_availabilty = request.POST.get("User_Availabilty")
+          user_id = request.user.id 
 
           UserProfileTable.objects.create(User_Major=user_major,
                                           User_Name=user_name,
@@ -31,7 +32,8 @@ def userdata(request):
                                           Goal_Deadline=goal_deadline,
                                           Skill_Set=skill_set,
                                           Needs_Visa_Sponsorship=needs_visa_sponsorship,
-                                          User_Availabilty=user_availabilty
+                                          User_Availabilty=user_availabilty,
+                                          user_id=user_id
                                           )
           return redirect("/accounts/signup")
         return render(request, "accounts/profile-creation.html")
