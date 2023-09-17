@@ -192,9 +192,11 @@
             modalDescription.textContent = eventDescription
 
             // Check for optional button to display
-            if (specialCode === 0 && optionalButtonContainer.childElementCount === 0) {
+
+            optionalButtonContainer.innerHTML = '';
+            if (specialCode !== 0) {                
                 const optionalButton = document.createElement('button');
-                optionalButton.textContent = 'Special Button';
+                optionalButton.textContent = `Go to ${eventTitle}`;
                 
                 // Add CSS to the button
                 //optionalButton.classList.add('btn btn-secondary');
@@ -202,7 +204,7 @@
                 // Event listener for linking to different HTML files
                 optionalButton.addEventListener('click', function () {
                     switch (specialCode) {
-                        case 0:
+                        case 1:
                             // Your logic for specialCode OPT
                             window.location.href = '/opt'
                             break;
