@@ -55,7 +55,7 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <a href="{% url 'calendarapp:trigger_auto_events' %}" class="btn btn-secondary">Generate Auto Events</a>
+                                <div id="optionalButtonContainer"></div>
                             </div>
                     </div>
                 </div>
@@ -183,14 +183,50 @@
 
         calendar.render();
 
-        function loadEvent(eventTitle, eventDescription) {
-            var modal = document.getElementById('loadModal')
-            var modalTitle = document.getElementById('modalTitle');
-            modalTitle.textContent = eventTitle
-
-            var modalDescription = document.getElementById('modalDescription');
-            modalDescription.textContent = eventDescription
+        function loadEvent(eventTitle, eventDescription, specialCode) {
+            const modalTitle = document.getElementById('modalTitle');
+            const modalDescription = document.getElementById('modalDescription');
+            const optionalButtonContainer = document.getElementById('optionalButtonContainer');
             
+            modalTitle.textContent = eventTitle
+            modalDescription.textContent = eventDescription
+
+            // Check for optional button to display
+            if (specialCode == 0) {
+                const optionalButton = document.createElement('button');
+                optionalButton.textContent = 'Special Button';
+                
+                // Add CSS to the button
+                //optionalButton.classList.add('btn btn-secondary');
+
+                // Event listener for linking to different HTML files
+                optionalButton.addEventListener('click', function () {
+                    switch (specialCode) {
+                        case 0:
+                            // Your logic for specialCode OPT
+                            window.location.href = '/opt'
+                            break;
+                        case 2:
+                            // Your logic for specialCode Job Interview
+                            break;
+                        case 3:
+                            // Your logic for specialCode Networking
+                            break;
+                        case 4:
+                            // Your logic for specialCode Job Finding
+                            break;
+                        default:
+                            // Your logic for an undefined or different specialCode
+                            alert('Special Code is undefined or not in the range of 0-3');
+                            break;
+                    }
+                });
+
+                optionalButtonContainer.appendChild(optionalButton);
+            }
+            
+            // Display modal
+            var modal = document.getElementById('loadModal')
             modal.style.display = 'block'
             calendar.unselect()
           }
@@ -200,28 +236,7 @@
               var eventTitle = "{{event.title}}";
               var eventDescription = "{{event.description}}";
               var specialCode = {{ event.special_event_code }};
-              loadEvent(eventTitle, eventDescription);
-              switch (specialCode) {
-                case 0:
-                    // Your logic for specialCode general tasks
-                    break;
-                case 1:
-                    // Your logic for specialCode OPT
-                    break;
-                case 2:
-                    // Your logic for specialCode Job Interview
-                    break;
-                case 3:
-                    // Your logic for specialCode Networking
-                    break;
-                case 4:
-                    // Your logic for specialCode Job Finding
-                    break;
-                default:
-                    // Your logic for an undefined or different specialCode
-                    alert('Special Code is undefined or not in the range of 0-3');
-                    break;
-            }
+              loadEvent(eventTitle, eventDescription, specialCode);
           });
         {% endfor %}
       });
