@@ -28,7 +28,6 @@ urlpatterns = [
     path('trigger_auto_events/', views.trigger_auto_events, name='trigger_auto_events'),
     
     path('delete_event/<int:event_id>/', views.trigger_delete_event, name='delete_event'),
-    path('get_event_details/<int:event_id>/', views.get_event_details, name='get_event_details'),
     path("opt/", views.opt)
 
 ]
