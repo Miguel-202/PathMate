@@ -3,7 +3,9 @@
 *Submitted for ShellHacks 2023*
 
 ## Overview
-PathMate is designed to bridge the gap between aspiring professionals—or anyone looking to achieve a specific set of goals—and the realization of those goals. Through AI-powered roadmaps, PathMate provides a holistic development solution covering everything from legal paperwork to skills enhancement opportunities. This app is perfect for students, young professionals, and anyone looking to streamline their career path.
+PathMate is designed to bridge the gap between aspiring professionals—or anyone looking to achieve a specific set of goals—and the realization of those goals. "Where your dreams find a date in your calendar," PathMate employs AI-powered roadmaps to provide a comprehensive development solution. This app covers everything from legal paperwork to skills enhancement opportunities, making it ideal for students, young professionals, and anyone looking to streamline their career path.
+
+What sets PathMate apart is its intelligent calendar integration. The app not only crafts a tailored roadmap but also schedules events—smaller, actionable steps toward your goal—right into your calendar. With adjustable time durations and frequency recommendations, PathMate ensures that you stay on track to achieve any type of goal you set.
 
 ## Features
 - **AI-Powered Roadmaps**: Custom roadmaps generated using advanced Natural Language algorithms.
