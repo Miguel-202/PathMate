@@ -1,5 +1,7 @@
 # PathMate: Your AI-Powered Roadmap for Career Success
-![PathMate Logo](logo.png)  
+<p align="center">
+  <img src="logo.png" alt="PathMate Logo">
+</p>
 *Submitted for ShellHacks 2023*
 
 ## Overview
