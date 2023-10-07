@@ -30,49 +30,52 @@ What sets PathMate apart is its intelligent calendar integration. The app not on
 - **Auth0 for user authorization account login**
 
 ## Installation & Setup
-	1.	Clone the GitHub repository:
 
-git clone [and copy the link]
+1. **Clone the GitHub repository:**
+    ```bash
+    git clone https://github.com/Miguel-202/PathMate
+    ```
 
+2. **Navigate to the project directory:**
+    ```bash
+    cd PathMate
+    ```
 
-	2.	Navigate to the project directory:
+3. **Create a virtual environment:**
+    ```bash
+    python3 -m venv venv
+    ```
 
-cd PathMate
+4. **Activate the virtual environment:**
+    ```bash
+    source venv/bin/activate
+    ```
 
+5. **Install the required packages:**
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-	3.	Create a virtual environment:
+6. **Make initial database migrations:**
+    ```bash
+    python manage.py makemigrations
+    ```
 
-python3 -m venv venv
+7. **Apply the database migrations:**
+    ```bash
+    python manage.py migrate
+    ```
 
+8. **Create an admin user:**
+    ```bash
+    python manage.py createsuperuser
+    ```
 
-	4.	Activate the virtual environment:
+9. **Run the server:**
+    ```bash
+    python manage.py runserver
+    ```
 
-source venv/bin/activate
-
-
-	5.	Install the required packages:
-
-pip install -r requirements.txt
-
-
-	6.	Make initial database migrations:
-
-python manage.py makemigrations
-
-
-	7.	Apply the database migrations:
-
-python manage.py migrate
-
-
-	8.	Create an admin user:
-
-python manage.py createsuperuser
-
-
-	9.	Run the server:
-
-python manage.py runserver
 
 
 
