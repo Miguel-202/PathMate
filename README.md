@@ -30,7 +30,51 @@ What sets PathMate apart is its intelligent calendar integration. The app not on
 - **Auth0 for user authorization account login**
 
 ## Installation & Setup
-For now, the project is not open source, but its use is free to all users at [PathMateAI](http://pathmateai.co/).
+	1.	Clone the GitHub repository:
+
+git clone [and copy the link]
+
+
+	2.	Navigate to the project directory:
+
+cd PathMate
+
+
+	3.	Create a virtual environment:
+
+python3 -m venv venv
+
+
+	4.	Activate the virtual environment:
+
+source venv/bin/activate
+
+
+	5.	Install the required packages:
+
+pip install -r requirements.txt
+
+
+	6.	Make initial database migrations:
+
+python manage.py makemigrations
+
+
+	7.	Apply the database migrations:
+
+python manage.py migrate
+
+
+	8.	Create an admin user:
+
+python manage.py createsuperuser
+
+
+	9.	Run the server:
+
+python manage.py runserver
+
+
 
 ## How to Use
 1. **Sign Up**: Create a new account or sign in.
